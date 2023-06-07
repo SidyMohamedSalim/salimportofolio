@@ -20,9 +20,9 @@ const Skills = () => {
             <h3 className="text-2xl font-bold fade-in">Design</h3>
             <ul className="mt-4 flex flex-col gap-2">
               {/* skyll */}
-              <Skill name="talwind" />
+              <Skill name="talwind" icon="/talwind-icon.svg" />
               {/* skyll */}
-              <Skill name="Figma" iscolor={true} />
+              <Skill name="Figma" iscolor={true} icon="/figma-icon.svg" />
               {/* skyll */}
             </ul>
           </div>
@@ -32,14 +32,13 @@ const Skills = () => {
             <h3 className="text-2xl font-bold fade-in">Front-End</h3>
             <ul className="mt-4 flex flex-col gap-2">
               {/* skyll */}
-              <Skill name="typescript" />
+              <Skill name="typescript" icon="/typescript-icon.svg" />
 
               {/* skyll */}
-              <Skill name="react & next" iscolor={true} />
+              <Skill name="react & next" iscolor={true} icon="react-icon.svg" />
+
               {/* skyll */}
-              <Skill name="php" />
-              {/* skyll */}
-              <Skill name="python" />
+              <Skill name="python" icon="/python-icon.svg" />
             </ul>
           </div>
           {/* Categorie */}
@@ -47,13 +46,17 @@ const Skills = () => {
             <h3 className="text-2xl font-bold fade-in">Back-End</h3>
             <ul className="mt-4 flex flex-col gap-2">
               {/* skyll */}
-              <Skill name="node Js" />
+              <Skill name="node Js" icon="/nodejs-icon.svg" />
               {/* skyll */}
-              <Skill name="Prisma" iscolor={true} />
+              <Skill name="Prisma" iscolor={true} icon="/prisma-icon.svg" />
               {/* skyll */}
-              <Skill name="django" />
+              <Skill name="django" icon="/django-icon.svg" />
               {/* skyll */}
-              <Skill name="postgresql" iscolor={true} />
+              <Skill
+                name="postgresql"
+                iscolor={true}
+                icon="/postgresql-icon.svg"
+              />
             </ul>
           </div>
           {/* Categorie */}
@@ -61,18 +64,9 @@ const Skills = () => {
             <h3 className="text-2xl font-bold fade-in">Autres</h3>
             <ul className="mt-4 flex flex-col gap-2">
               {/* skyll */}
-              <span>
-                <li className="flex items-center gap-2 text-lg">
-                  <span>
-                    <Icons.logo className="w-6 h-6" />
-                  </span>
-                  <span className="font-bold text-sky-500">Figma</span>
-                </li>
-              </span>
+              <Skill name="git & github" icon="/github-icon.svg" />
               {/* skyll */}
-              <Skill name="git & github" />
-              {/* skyll */}
-              <Skill name="vercel" iscolor={true} />
+              <Skill name="vercel" iscolor={true} icon="/vercel-icon.svg" />
             </ul>
           </div>
         </div>

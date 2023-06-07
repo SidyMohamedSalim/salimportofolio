@@ -25,12 +25,12 @@ const Projects = () => {
               accusamus ratione praesentium?
             </p>
             <div className="mt-5 flex justify-end pr-5">
-              <Link className="text-md m-2  h-10 w-10 rounded-md p-1 shadow-md shadow-sky-100">
-                <Icons.gitHub />
-              </Link>
-              <Link className="text-md m-2  h-10 w-10 rounded-md p-1 shadow-md shadow-sky-100">
-                <Icons.twitter />
-              </Link>
+              <div className="m-2 flex h-10 w-10 cursor-pointer  items-center justify-center rounded-md border border-sky-300 p-1 text-center align-middle shadow-md">
+                <Icons.code />
+              </div>
+              <div className="m-2 flex h-10 w-10 cursor-pointer  items-center justify-center rounded-md border border-sky-300 p-1 text-center align-middle shadow-md">
+                <Icons.views />
+              </div>
             </div>
           </div>
           {/* Project */}
@@ -43,50 +43,12 @@ const Projects = () => {
               accusamus ratione praesentium?
             </p>
             <div className="mt-5 flex justify-end pr-5">
-              <Link className="text-md m-2  h-10 w-10 rounded-md p-1 shadow-md shadow-sky-100">
-                <Icons.gitHub />
-              </Link>
-              <Link className="text-md m-2  h-10 w-10 rounded-md p-1 shadow-md shadow-sky-100">
-                <Icons.twitter />
-              </Link>
-            </div>
-          </div>
-
-          {/* Project */}
-          <div className="my-3 w-80 rounded-md  px-3 pb-5 shadow-md shadow-sky-300">
-            <h1 className="p-4 text-center text-lg font-bold">E-commerce</h1>
-            <p className="text-md ">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum,
-              voluptatum? Eveniet amet dignissimos autem nam enim quae sunt,
-              ullam rem mollitia error nostrum suscipit esse quidem neque
-              accusamus ratione praesentium?
-            </p>
-            <div className="mt-5 flex justify-end pr-5">
-              <Link className="text-md m-2  h-10 w-10 rounded-md p-1 shadow-md shadow-sky-100">
-                <Icons.gitHub />
-              </Link>
-              <Link className="text-md m-2  h-10 w-10 rounded-md p-1 shadow-md shadow-sky-100">
-                <Icons.twitter />
-              </Link>
-            </div>
-          </div>
-
-          {/* Project */}
-          <div className="my-3 w-80 rounded-md  px-3 pb-5 shadow-md shadow-sky-300">
-            <h1 className="p-4 text-center text-lg font-bold">Blog Site</h1>
-            <p className="text-md ">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum,
-              voluptatum? Eveniet amet dignissimos autem nam enim quae sunt,
-              ullam rem mollitia error nostrum suscipit esse quidem neque
-              accusamus ratione praesentium?
-            </p>
-            <div className="mt-5 flex justify-end pr-5">
-              <Link className="text-md m-2  h-10 w-10 rounded-md p-1 shadow-md shadow-sky-100">
-                <Icons.gitHub />
-              </Link>
-              <Link className="text-md m-2  h-10 w-10 rounded-md p-1 shadow-md shadow-sky-100">
-                <Icons.twitter />
-              </Link>
+              <div className="m-2 flex h-10 w-10 cursor-pointer  items-center justify-center rounded-md border border-sky-300 p-1 text-center align-middle shadow-md">
+                <Icons.code />
+              </div>
+              <div className="m-2 flex h-10 w-10 cursor-pointer  items-center justify-center rounded-md border border-sky-300 p-1 text-center align-middle shadow-md">
+                <Icons.views />
+              </div>
             </div>
           </div>
         </div>

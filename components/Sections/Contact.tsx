@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "lucide-react"
 
-import { buttonVariants } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 
 import { siteConfig } from "../../config/site"
 import { TitleSection } from "../TitleSection"
@@ -24,34 +24,49 @@ export const Contacts = () => {
         <div className="mt-10 flex flex-wrap justify-center">
           {/* contact */}
 
-          <div className="mx-4 my-3 flex justify-center rounded-2xl bg-sky-100 p-1 px-3 py-4  align-middle dark:bg-sky-900">
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href={siteConfig.links.github}
+            className="mx-4 my-3 flex justify-center rounded-2xl bg-sky-100 p-1 px-3 py-4  align-middle dark:bg-sky-900"
+          >
             <span>
               <Link className="text-md mx-2 h-8 w-8 rounded-md bg-sky-400 p-1 shadow-md">
                 <Icons.gitHub />
               </Link>
             </span>
             <h1 className="mx-2 text-lg font-semibold">Github</h1>
-          </div>
+          </a>
 
           {/* contact */}
-          <div className="mx-4 my-3 flex justify-center rounded-2xl bg-sky-100 p-1 px-3 py-4 align-middle dark:bg-sky-900">
-            <span>
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href={siteConfig.links.twitter}
+            className="mx-4 my-3 flex justify-center rounded-2xl bg-sky-100 p-1 px-3 py-4 align-middle dark:bg-sky-900"
+          >
+            <span className="">
               <Link className="text-md mx-2 h-8 w-8 rounded-md bg-sky-400 p-1 shadow-md">
                 <Icons.twitter />
               </Link>
             </span>
             <h1 className="mx-2 text-lg font-semibold">Tweeter</h1>
-          </div>
+          </a>
 
           {/* contact */}
-          <div className="mx-4 my-3 flex justify-center rounded-2xl bg-sky-100 p-1 px-3 py-4 align-middle dark:bg-sky-900">
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href={"mailto:" + siteConfig.email}
+            className="mx-4 my-3 flex justify-center rounded-2xl bg-sky-100 p-1 px-3 py-4 align-middle dark:bg-sky-900"
+          >
             <span>
               <Link className="text-md mx-2 h-8 w-8 rounded-md bg-sky-400 p-1 shadow-md">
                 <Icons.gitHub />
               </Link>
             </span>
             <h1 className="mx-2 text-lg font-semibold">{siteConfig.email}</h1>
-          </div>
+          </a>
         </div>
       </div>
     </section>

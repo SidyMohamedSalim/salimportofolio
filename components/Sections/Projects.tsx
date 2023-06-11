@@ -1,6 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react"
+import Image from "next/image"
 import { Link } from "lucide-react"
 
+import { siteConfig } from "../../config/site"
 import { TitleSection } from "../TitleSection"
 import { Icons } from "../icons"
 
@@ -17,20 +20,34 @@ const Projects = () => {
         <div className="mt-10 flex flex-wrap justify-evenly">
           {/* Project */}
           <div className="my-3 w-80 rounded-md  px-3 pb-5 shadow-md shadow-sky-300">
-            <h1 className="p-4 text-center text-lg font-bold">Tweeter Clone</h1>
-            <p className="text-md ">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum,
-              voluptatum? Eveniet amet dignissimos autem nam enim quae sunt,
-              ullam rem mollitia error nostrum suscipit esse quidem neque
-              accusamus ratione praesentium?
-            </p>
+            <h1 className="p-4 text-center text-lg font-bold">Afia Shop</h1>
+            <div className="">
+              <Image
+                src={"/commerce.png"}
+                width={320}
+                height={320}
+                alt={""}
+                className="rounded-md bg-sky-100"
+              />
+            </div>
+
             <div className="mt-5 flex justify-end pr-5">
-              <div className="m-2 flex h-10 w-10 cursor-pointer  items-center justify-center rounded-md border border-sky-300 p-1 text-center align-middle shadow-md">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href={siteConfig.links.afiaShopGithut}
+                className="m-2 flex h-10 w-10 cursor-pointer  items-center justify-center rounded-md border border-sky-300 p-1 text-center align-middle shadow-md"
+              >
                 <Icons.code />
-              </div>
-              <div className="m-2 flex h-10 w-10 cursor-pointer  items-center justify-center rounded-md border border-sky-300 p-1 text-center align-middle shadow-md">
+              </a>
+              <a
+                href={siteConfig.links.afiaShopLive}
+                target="_blank"
+                rel="noreferrer"
+                className="m-2 flex h-10 w-10 cursor-pointer  items-center justify-center rounded-md border border-sky-300 p-1 text-center align-middle shadow-md"
+              >
                 <Icons.views />
-              </div>
+              </a>
             </div>
           </div>
           {/* Project */}

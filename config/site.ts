@@ -15,7 +15,7 @@ export const siteConfig = {
     github: "https://github.com/SidyMohamedSalim",
     afiaShopGithut: "https://github.com/SidyMohamedSalim/ecommerce",
     afiaShopLive: "https://afia-shop.netlify.app/",
-    CuisineLive: "https://cookblog.netlify.app/",
+    CuisineLive: "https://cook-blog.vercel.app/",
     CuisineGithut: "https://github.com/SidyMohamedSalim/CookBlog",
   },
   dropMenu: [

@@ -67,7 +67,7 @@ export const Contacts: React.FC = () => {
           Feel free to reach out if you have any questions or just want to
           connect!
         </p>
-        <div className="grid gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3">
           {contactItems.map((item, index) => (
             <ContactItem key={index} {...item} />
           ))}

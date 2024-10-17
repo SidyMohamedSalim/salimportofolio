@@ -80,7 +80,7 @@ const Projects: React.FC = () => {
       title: "Travel Site",
       imageSrc: "/projets/travel.png",
       githubLink: "https://github.com/SidyMohamedSalim/easyTourisme",
-      liveLink: "https://revise-app-ia.vercel.app/",
+      liveLink: "https://travelsalim.netlify.app",
     },
     // Add more projects here
   ]

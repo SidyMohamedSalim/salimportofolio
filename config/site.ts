@@ -17,11 +17,11 @@ export const siteConfig = {
   dropMenu: [
     {
       title: "SKILLS",
-      href: "#skill",
+      href: "#skills",
     },
     {
       title: "PROJECTS",
-      href: "#project",
+      href: "#projects",
     },
     {
       title: "ABOUT ME",

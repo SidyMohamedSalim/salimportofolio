@@ -1,7 +1,8 @@
+"use client"
+
 import React from "react"
 import Link from "next/link"
-
-// import { } from "framer-
+import { motion } from "framer-motion"
 
 import { TitleSection } from "../TitleSection"
 import { Icons } from "../icons"
@@ -19,9 +20,8 @@ const Skill: React.FC<SkillProps> = ({
   isColor = false,
   isHighlighted = false,
 }) => (
-  <li className={`mb-4 ${isHighlighted ? "order-first" : ""}`}>
-    <Link
-      href={"/"}
+  <motion.div className={`mb-4 ${isHighlighted ? "order-first" : ""}`}>
+    <div
       className={`flex items-center p-3 space-x-3 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg ${
         isHighlighted
           ? "text-white bg-gradient-to-r from-blue-500 to-purple-500"
@@ -31,7 +31,7 @@ const Skill: React.FC<SkillProps> = ({
       <img
         src={icon}
         alt={`${name} icon`}
-        className={`h-8 w-8  dark:bg-white rounded-full dark:p-1 ${
+        className={`h-8 w-8  dark:bg-white dark:rounded-full dark:p-1 ${
           isColor ? "" : "filter-none"
         }`}
       />
@@ -45,8 +45,8 @@ const Skill: React.FC<SkillProps> = ({
           Favoris
         </span>
       )}
-    </Link>
-  </li>
+    </div>
+  </motion.div>
 )
 
 interface SkillCategoryProps {

@@ -1,7 +1,8 @@
+"use client"
+
 import React from "react"
 import Link from "next/link"
-
-// import { } from "framer-
+import { motion } from "framer-motion"
 
 import { siteConfig } from "@/config/site"
 
@@ -12,11 +13,11 @@ const Hero: React.FC = () => {
   return (
     <section id="home" className="container px-4 pt-32 pb-16 mx-auto">
       <div className="flex flex-col-reverse gap-12 justify-between items-center md:flex-row">
-        <div
+        <motion.div
           className="flex flex-col justify-center items-start max-w-xl"
-          // initial={{ opacity: 0, y: 20 }}
-          // animate={{ opacity: 1, y: 0 }}
-          // transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
           <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
             Hello, I&apos;m{" "}
@@ -44,18 +45,18 @@ const Hero: React.FC = () => {
               View My Work
             </Link>
           </div>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
           className="relative"
-          // initial={{ opacity: 0, scale: 0.5 }}
-          // animate={{ opacity: 1, scale: 1 }}
-          // transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full opacity-75 blur-lg animate-pulse" />
           <Avatar className="relative w-64 h-64 border-4 border-white shadow-lg dark:border-gray-800">
             <AvatarImage src="/profil2.png" alt="Salim Diallo" />
           </Avatar>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

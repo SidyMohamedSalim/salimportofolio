@@ -2,7 +2,7 @@
 
 import React from "react"
 import Image from "next/image"
-// import { motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { ExternalLink, Github } from "lucide-react"
 
 import { siteConfig } from "../../config/site"
@@ -21,8 +21,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   githubLink,
   liveLink,
 }) => (
-  <div
-    // whileHover={{ scale: 1.05 }}
+  <motion.div
+    whileHover={{ scale: 1.05 }}
     className="flex overflow-hidden flex-col bg-white rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800"
   >
     <div className="relative w-full h-48">
@@ -57,7 +57,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </a>
       </div>
     </div>
-  </div>
+  </motion.div>
 )
 
 const Projects: React.FC = () => {

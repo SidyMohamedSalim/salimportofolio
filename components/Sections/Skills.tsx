@@ -55,7 +55,7 @@ interface SkillCategoryProps {
 }
 
 const SkillCategory: React.FC<SkillCategoryProps> = ({ title, skills }) => (
-  <div className="py-8 w-full">
+  <div className="w-full md:py-8">
     <h3 className="mb-4 text-xl font-bold text-gray-800 dark:text-white">
       {title}
     </h3>
@@ -111,10 +111,10 @@ const Skills: React.FC = () => {
   ]
 
   return (
-    <section id="skills" className="py-24 bg-gray-50 dark:bg-gray-900">
+    <section id="skills" className="py-8 bg-gray-50 md:py-16 dark:bg-gray-900">
       <div className="container px-4 mx-auto">
         <TitleSection title="Compétences" />
-        <div className="grid gap-8 mt-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 mt-12 md:gap-8 md:grid-cols-2 lg:grid-cols-4">
           {skillCategories.map((category, index) => (
             <SkillCategory key={index} {...category} />
           ))}

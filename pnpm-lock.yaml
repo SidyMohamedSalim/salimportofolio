@@ -17,6 +17,7 @@ specifiers:
   eslint-config-prettier: ^8.8.0
   eslint-plugin-react: ^7.32.2
   eslint-plugin-tailwindcss: ^3.12.0
+  framer-motion: ^11.5.4
   lucide-react: 0.105.0-alpha.4
   next: ^13.4.4
   next-themes: ^0.2.1
@@ -36,6 +37,7 @@ dependencies:
   '@radix-ui/react-slot': 1.0.2_i2bxsyfskhzbpjanbovidbfj7u
   class-variance-authority: 0.4.0_typescript@4.9.5
   clsx: 1.2.1
+  framer-motion: 11.5.4_biqbaboplfbrettd7655fr4n2y
   lucide-react: 0.105.0-alpha.4_react@18.2.0
   next: 13.4.4_biqbaboplfbrettd7655fr4n2y
   next-themes: 0.2.1_z4pol2qj2yv3um3jqqobs4b3eu
@@ -1833,6 +1835,25 @@ packages:
   /fraction.js/4.2.0:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
+
+  /framer-motion/11.5.4_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-E+tb3/G6SO69POkdJT+3EpdMuhmtCh9EWuK4I1DnIC23L7tFPrl8vxP+LSovwaw6uUr73rUbpb4FgK011wbRJQ==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      tslib: 2.5.3
+    dev: false
 
   /fs-constants/1.0.0:
     resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}

@@ -82,9 +82,12 @@ const Skills: React.FC = () => {
         {
           name: "JavaScript",
           icon: "/js-icon.svg",
+        },
+        {
+          name: "TypeScript",
+          icon: "/typescript-icon.svg",
           isHighlighted: true,
         },
-        { name: "TypeScript", icon: "/typescript-icon.svg" },
         { name: "React & Next.js", icon: "/react-icon.svg", isColor: true },
       ],
     },

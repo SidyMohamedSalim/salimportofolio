@@ -1,72 +1,86 @@
-import React from "react"
-import { Link } from "lucide-react"
+"use client"
 
-import { Button, buttonVariants } from "@/components/ui/button"
+import React from "react"
+import { Github, Mail, Twitter } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
 
 import { siteConfig } from "../../config/site"
 import { TitleSection } from "../TitleSection"
-import { Icons } from "../icons"
 
-export const Contacts = () => {
+interface ContactItemProps {
+  icon: React.ReactNode
+  label: string
+  value: string
+  href: string
+}
+
+const ContactItem: React.FC<ContactItemProps> = ({
+  icon,
+  label,
+  value,
+  href,
+}) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noreferrer noopener"
+    className="flex items-center p-4 bg-white rounded-lg shadow-md transition-all duration-300 hover:shadow-lg dark:bg-gray-800 dark:hover:bg-gray-700"
+  >
+    <div className="p-3 mr-4 text-white bg-blue-500 rounded-full">{icon}</div>
+    <div>
+      <h3 className="font-semibold text-gray-700 dark:text-gray-200">
+        {label}
+      </h3>
+      <p className="text-sm text-gray-600 dark:text-gray-400">{value}</p>
+    </div>
+  </a>
+)
+
+export const Contacts: React.FC = () => {
+  const contactItems: ContactItemProps[] = [
+    {
+      icon: <Github size={24} />,
+      label: "GitHub",
+      value: "View my repositories",
+      href: siteConfig.links.github,
+    },
+    {
+      icon: <Twitter size={24} />,
+      label: "Twitter",
+      value: "Follow me on Twitter",
+      href: siteConfig.links.twitter,
+    },
+    {
+      icon: <Mail size={24} />,
+      label: "Email",
+      value: siteConfig.email,
+      href: `mailto:${siteConfig.email}`,
+    },
+  ]
+
   return (
-    <section
-      id="contact"
-      className="relative isolate overflow-hidden  px-6 py-24 sm:py-32 lg:px-8"
-    >
-      <div className="absolute inset-0 -z-10 opacity-20" />
-      <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] opacity-30  shadow-xl  ring-1 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
-      <div className="mx-auto max-w-2xl lg:max-w-5xl">
-        <TitleSection title="Contacts Me" />
-
-        <p className="pt-7 text-center">
-          ask me any question do you want to know about me
+    <section id="contact" className="py-24 bg-gray-50 dark:bg-gray-900">
+      <div className="container px-4 mx-auto">
+        <TitleSection title="Contact Me" />
+        <p className="mx-auto mt-4 max-w-2xl text-center text-gray-600 dark:text-gray-400">
+          Feel free to reach out if you have any questions or just want to
+          connect!
         </p>
-        <div className="mt-10 flex flex-wrap justify-center">
-          {/* contact */}
-
-          <a
-            target="_blank"
-            rel="noreferrer noopener"
-            href={siteConfig.links.github}
-            className="mx-4 my-3 flex justify-center rounded-2xl bg-sky-100 p-1 px-3 py-4  align-middle dark:bg-sky-900"
+        <div className="grid gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3">
+          {contactItems.map((item, index) => (
+            <ContactItem key={index} {...item} />
+          ))}
+        </div>
+        <div className="mt-12 text-center">
+          <Button
+            size="lg"
+            onClick={() =>
+              (window.location.href = `mailto:${siteConfig.email}`)
+            }
           >
-            <span>
-              <Link className="text-md mx-2 h-8 w-8 rounded-md bg-sky-400 p-1 shadow-md">
-                <Icons.gitHub />
-              </Link>
-            </span>
-            <h1 className="mx-2 text-lg font-semibold">Github</h1>
-          </a>
-
-          {/* contact */}
-          <a
-            target="_blank"
-            rel="noreferrer noopener"
-            href={siteConfig.links.twitter}
-            className="mx-4 my-3 flex justify-center rounded-2xl bg-sky-100 p-1 px-3 py-4 align-middle dark:bg-sky-900"
-          >
-            <span className="">
-              <Link className="text-md mx-2 h-8 w-8 rounded-md bg-sky-400 p-1 shadow-md">
-                <Icons.twitter />
-              </Link>
-            </span>
-            <h1 className="mx-2 text-lg font-semibold">Tweeter</h1>
-          </a>
-
-          {/* contact */}
-          <a
-            target="_blank"
-            rel="noreferrer noopener"
-            href={"mailto:" + siteConfig.email}
-            className="mx-4 my-3 flex justify-center rounded-2xl bg-sky-100 p-1 px-3 py-4 align-middle dark:bg-sky-900"
-          >
-            <span>
-              <Link className="text-md mx-2 h-8 w-8 rounded-md bg-sky-400 p-1 shadow-md">
-                <Icons.gitHub />
-              </Link>
-            </span>
-            <h1 className="mx-2 text-lg font-semibold">{siteConfig.email}</h1>
-          </a>
+            Send me a message
+          </Button>
         </div>
       </div>
     </section>

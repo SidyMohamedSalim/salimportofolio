@@ -1,74 +1,120 @@
 import React from "react"
+import Link from "next/link"
+
+// import { } from "framer-
 
 import { TitleSection } from "../TitleSection"
 import { Icons } from "../icons"
-import Skill from "../skill"
 
-const Skills = () => {
-  return (
-    <section
-      id="skill"
-      className="relative isolate overflow-hidden  px-6 py-24 sm:py-32 lg:px-8"
+interface SkillProps {
+  name: string
+  icon: string
+  isColor?: boolean
+  isHighlighted?: boolean
+}
+
+const Skill: React.FC<SkillProps> = ({
+  name,
+  icon,
+  isColor = false,
+  isHighlighted = false,
+}) => (
+  <li className={`mb-4 ${isHighlighted ? "order-first" : ""}`}>
+    <Link
+      href={"/"}
+      className={`flex items-center p-3 space-x-3 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg ${
+        isHighlighted
+          ? "text-white bg-gradient-to-r from-blue-500 to-purple-500"
+          : "bg-white dark:bg-gray-800"
+      }`}
     >
-      <div className="absolute inset-0 -z-10 opacity-20" />
-      <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] opacity-30  shadow-xl  ring-1 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
-      <div className="mx-auto max-w-2xl lg:max-w-5xl">
-        <TitleSection title="Skills" />
-        <div className="mt-10 flex flex-wrap justify-between">
-          {/* Categorie */}
-          <div className="sm:mx-10">
-            <h3 className="text-2xl font-bold fade-in">Design</h3>
-            <ul className="mt-4 flex flex-col gap-2">
-              {/* skyll */}
-              <Skill name="talwind" icon="/talwind-icon.svg" />
-              {/* skyll */}
-              <Skill name="Figma" iscolor={true} icon="/figma-icon.svg" />
-              {/* skyll */}
-            </ul>
-          </div>
+      <img
+        src={icon}
+        alt={`${name} icon`}
+        className={`h-8 w-8  dark:bg-white rounded-full dark:p-1 ${
+          isColor ? "" : "filter-none"
+        }`}
+      />
+      <span
+        className={`text-sm font-medium ${isHighlighted ? "text-white" : ""}`}
+      >
+        {name}
+      </span>
+      {isHighlighted && (
+        <span className="px-2 py-1 ml-auto text-xs font-semibold text-blue-500 bg-white rounded-full">
+          Favoris
+        </span>
+      )}
+    </Link>
+  </li>
+)
 
-          {/* Categorie */}
-          <div className="sm:mx-10">
-            <h3 className="text-2xl font-bold fade-in">Front-End</h3>
-            <ul className="mt-4 flex flex-col gap-2">
-              {/* skyll */}
-              <Skill name="typescript" icon="/typescript-icon.svg" />
+interface SkillCategoryProps {
+  title: string
+  skills: SkillProps[]
+}
 
-              {/* skyll */}
-              <Skill name="react & next" iscolor={true} icon="react-icon.svg" />
+const SkillCategory: React.FC<SkillCategoryProps> = ({ title, skills }) => (
+  <div className="py-8 w-full">
+    <h3 className="mb-4 text-xl font-bold text-gray-800 dark:text-white">
+      {title}
+    </h3>
+    <ul>
+      {skills.map((skill, index) => (
+        <Skill key={index} {...skill} />
+      ))}
+    </ul>
+  </div>
+)
 
-              {/* skyll */}
-              <Skill name="python" icon="/python-icon.svg" />
-            </ul>
-          </div>
-          {/* Categorie */}
-          <div className="sm:mx-10">
-            <h3 className="text-2xl font-bold fade-in">Back-End</h3>
-            <ul className="mt-4 flex flex-col gap-2">
-              {/* skyll */}
-              <Skill name="node Js" icon="/nodejs-icon.svg" />
-              {/* skyll */}
-              <Skill name="Prisma" iscolor={true} icon="/prisma-icon.svg" />
-              {/* skyll */}
-              <Skill name="django" icon="/django-icon.svg" />
-              {/* skyll */}
-              <Skill
-                name="postgresql"
-                iscolor={true}
-                icon="/postgresql-icon.svg"
-              />
-            </ul>
-          </div>
-          {/* Categorie */}
-          <div className="sm:mx-10">
-            <h3 className="text-2xl font-bold fade-in">Autres</h3>
-            <ul className="mt-4 flex flex-col gap-2">
-              {/* skyll */}
-              <Skill name="git & github" icon="/github-icon.svg" />
-              {/* skyll */}
-              <Skill name="vercel" iscolor={true} icon="/vercel-icon.svg" />
-            </ul>
-          </div>
+const Skills: React.FC = () => {
+  const skillCategories: SkillCategoryProps[] = [
+    {
+      title: "Design",
+      skills: [
+        { name: "Tailwind CSS", icon: "/tailwindcss-icon.svg" },
+        { name: "Figma", icon: "/figma-icon.svg", isColor: true },
+      ],
+    },
+    {
+      title: "Front-End",
+      skills: [
+        {
+          name: "JavaScript",
+          icon: "/js-icon.svg",
+          isHighlighted: true,
+        },
+        { name: "TypeScript", icon: "/typescript-icon.svg" },
+        { name: "React & Next.js", icon: "/react-icon.svg", isColor: true },
+      ],
+    },
+    {
+      title: "Back-End",
+      skills: [
+        { name: "Python", icon: "/python-icon.svg", isHighlighted: true },
+        { name: "Node.js", icon: "/nodejs-icon.svg" },
+        { name: "Django", icon: "/django-icon.svg" },
+        { name: "PostgreSQL", icon: "/postgresql-icon.svg", isColor: true },
+      ],
+    },
+    {
+      title: "Outils & Déploiement",
+      skills: [
+        { name: "Git & GitHub", icon: "/github-icon.svg" },
+        { name: "Vercel", icon: "/vercel-icon.svg", isColor: true },
+        { name: "Prisma", icon: "/prisma-icon.svg", isColor: true },
+      ],
+    },
+  ]
+
+  return (
+    <section id="skills" className="py-24 bg-gray-50 dark:bg-gray-900">
+      <div className="container px-4 mx-auto">
+        <TitleSection title="Compétences" />
+        <div className="grid gap-8 mt-12 md:grid-cols-2 lg:grid-cols-4">
+          {skillCategories.map((category, index) => (
+            <SkillCategory key={index} {...category} />
+          ))}
         </div>
       </div>
     </section>

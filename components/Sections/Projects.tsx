@@ -1,86 +1,90 @@
-/* eslint-disable @next/next/no-img-element */
+"use client"
+
 import React from "react"
 import Image from "next/image"
-import { Link } from "lucide-react"
+// import { motion } from "framer-motion"
+import { ExternalLink, Github } from "lucide-react"
 
 import { siteConfig } from "../../config/site"
 import { TitleSection } from "../TitleSection"
-import { Icons } from "../icons"
 
-const Projects = () => {
+interface ProjectCardProps {
+  title: string
+  imageSrc: string
+  githubLink: string
+  liveLink: string
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  title,
+  imageSrc,
+  githubLink,
+  liveLink,
+}) => (
+  <div
+    // whileHover={{ scale: 1.05 }}
+    className="flex overflow-hidden flex-col bg-white rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800"
+  >
+    <div className="relative w-full h-48">
+      <Image
+        src={imageSrc}
+        layout="fill"
+        objectFit="cover"
+        alt={title}
+        className="transition-all duration-300 hover:opacity-75"
+      />
+    </div>
+    <div className="flex flex-col flex-1 justify-between p-6">
+      <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
+        {title}
+      </h3>
+      <div className="flex justify-end mt-4 space-x-4">
+        <a
+          href={githubLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 text-gray-700 bg-gray-200 rounded-full transition-colors hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
+        >
+          <Github size={20} />
+        </a>
+        <a
+          href={liveLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 text-white bg-blue-500 rounded-full transition-colors hover:bg-blue-600"
+        >
+          <ExternalLink size={20} />
+        </a>
+      </div>
+    </div>
+  </div>
+)
+
+const Projects: React.FC = () => {
+  const projects: ProjectCardProps[] = [
+    {
+      title: "Afia Shop",
+      imageSrc: "/commerce.png",
+      githubLink: siteConfig.links.afiaShopGithut,
+      liveLink: siteConfig.links.afiaShopLive,
+    },
+    {
+      title: "Tic Tac Toe",
+      imageSrc: "/cook.png",
+      githubLink: siteConfig.links.CuisineGithut,
+      liveLink: siteConfig.links.CuisineLive,
+    },
+    // Add more projects here
+  ]
+
   return (
-    <section
-      id="project"
-      className="relative isolate overflow-hidden  px-6 py-24 sm:py-32 lg:px-8"
-    >
-      <div className="absolute inset-0 -z-10 opacity-20" />
-      <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] opacity-30  shadow-xl  ring-1 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
-      <div className="mx-auto max-w-2xl lg:max-w-5xl">
+    <section id="projects" className="py-24 bg-gray-50 dark:bg-gray-900">
+      <div className="container px-4 mx-auto">
         <TitleSection title="Projects" />
-        <div className="mt-10 flex flex-wrap justify-evenly">
-          {/* Project */}
-          <div className="my-3 w-80 rounded-md  px-3 pb-5 shadow-md shadow-sky-300">
-            <h1 className="p-4 text-center text-lg font-bold">Afia Shop</h1>
-            <div className="">
-              <Image
-                src={"/commerce.png"}
-                width={320}
-                height={320}
-                alt={""}
-                className="rounded-md bg-sky-100"
-              />
-            </div>
-
-            <div className="mt-5 flex justify-end pr-5">
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href={siteConfig.links.afiaShopGithut}
-                className="m-2 flex h-10 w-10 cursor-pointer  items-center justify-center rounded-md border border-sky-300 p-1 text-center align-middle shadow-md"
-              >
-                <Icons.code />
-              </a>
-              <a
-                href={siteConfig.links.afiaShopLive}
-                target="_blank"
-                rel="noreferrer"
-                className="m-2 flex h-10 w-10 cursor-pointer  items-center justify-center rounded-md border border-sky-300 p-1 text-center align-middle shadow-md"
-              >
-                <Icons.views />
-              </a>
-            </div>
-          </div>
-          {/* Project */}
-          <div className="my-3 w-80 rounded-md  px-3 pb-5 shadow-md shadow-sky-300">
-            <h1 className="p-4 text-center text-lg font-bold">Tic Tac To</h1>
-            <div className="">
-              <Image
-                src={"/cook.png"}
-                width={320}
-                height={320}
-                alt={""}
-                className="rounded-md bg-sky-100"
-              />
-            </div>
-            <div className="mt-5 flex justify-end pr-5">
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href={siteConfig.links.CuisineGithut}
-                className="m-2 flex h-10 w-10 cursor-pointer  items-center justify-center rounded-md border border-sky-300 p-1 text-center align-middle shadow-md"
-              >
-                <Icons.code />
-              </a>
-              <a
-                href={siteConfig.links.CuisineLive}
-                target="_blank"
-                rel="noreferrer"
-                className="m-2 flex h-10 w-10 cursor-pointer  items-center justify-center rounded-md border border-sky-300 p-1 text-center align-middle shadow-md"
-              >
-                <Icons.views />
-              </a>
-            </div>
-          </div>
+        <div className="grid gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <ProjectCard key={index} {...project} />
+          ))}
         </div>
       </div>
     </section>

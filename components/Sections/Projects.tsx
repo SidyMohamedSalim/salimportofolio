@@ -21,6 +21,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   liveLink,
 }) => (
   <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.3 }}
+    transition={{ duration: 0.5 }}
     whileHover={{ scale: 1.05 }}
     className="flex overflow-hidden flex-col bg-white rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800"
   >
@@ -39,24 +43,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </h3>
       <div className="flex justify-end mt-4 space-x-4">
         {githubLink && (
-          <a
+          <motion.a
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             href={githubLink}
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 text-gray-700 bg-gray-200 rounded-full transition-colors hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
           >
             <Github size={20} />
-          </a>
+          </motion.a>
         )}
         {liveLink && (
-          <a
+          <motion.a
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             href={liveLink}
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 text-white bg-blue-500 rounded-full transition-colors hover:bg-blue-600"
           >
             <ExternalLink size={20} />
-          </a>
+          </motion.a>
         )}
       </div>
     </div>
@@ -85,15 +93,45 @@ const Projects: React.FC = () => {
     // Add more projects here
   ]
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  }
+
   return (
     <section id="projects" className="py-24">
       <div className="container px-4 mx-auto">
-        <TitleSection title="Projects" />
-        <div className="grid gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+        >
+          <TitleSection title="Projects" />
+        </motion.div>
+        <motion.div
+          className="grid gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <motion.div key={index} variants={itemVariants}>
+              <ProjectCard {...project} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

@@ -26,8 +26,8 @@ const Hero: React.FC = () => {
             </span>
           </h1>
           <p className="mb-6 text-xl text-gray-600 dark:text-gray-300">
-            Web and mobile developer passionate about technology. My motto:
-            Always learning, always improving.
+            Software Engineer passionate about technology. My motto: Always
+            learning, always improving.
           </p>
           <div className="flex gap-4">
             <Link

@@ -99,6 +99,7 @@ const Skills: React.FC = () => {
         { name: "Tailwind CSS", icon: "/tailwindcss-icon.svg" },
         { name: "Figma", icon: "/figma-icon.svg", isColor: true },
       ],
+      index: 0,
     },
     {
       title: "Front-End",
@@ -111,6 +112,7 @@ const Skills: React.FC = () => {
         },
         { name: "React & Next.js", icon: "/react-icon.svg", isColor: true },
       ],
+      index: 1,
     },
     {
       title: "Back-End",
@@ -120,6 +122,7 @@ const Skills: React.FC = () => {
         { name: "Django", icon: "/django-icon.svg" },
         { name: "PostgreSQL", icon: "/postgresql-icon.svg", isColor: true },
       ],
+      index: 2,
     },
     {
       title: "Outils & Déploiement",
@@ -128,6 +131,7 @@ const Skills: React.FC = () => {
         { name: "Vercel", icon: "/vercel-icon.svg", isColor: true },
         { name: "Prisma", icon: "/prisma-icon.svg", isColor: true },
       ],
+      index: 3,
     },
   ]
 
@@ -166,7 +170,7 @@ const Skills: React.FC = () => {
         >
           {skillCategories.map((category, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <SkillCategory {...category} index={index} />
+              <SkillCategory {...category} />
             </motion.div>
           ))}
         </motion.div>

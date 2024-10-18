@@ -92,8 +92,8 @@ export const Contacts: React.FC = () => {
         >
           <TitleSection title="Let's Connect!" />
           <p className="mx-auto mt-4 max-w-2xl text-lg text-center text-gray-600 dark:text-gray-400">
-            I'm always excited to collaborate on new projects or just have a
-            friendly chat. Don't hesitate to reach out!
+            I&apos;m always excited to collaborate on new projects or just have
+            a friendly chat. Don&apos;t hesitate to reach out!
           </p>
         </motion.div>
         <motion.div

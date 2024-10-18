@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Linkedin } from "lucide-react"
 
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
@@ -41,6 +42,21 @@ export function SiteHeader() {
               >
                 <Icons.twitter className="w-5 h-5 dark:w-7 dark:h-7" />
                 <span className="sr-only">Twitter</span>
+              </div>
+            </Link>
+            <Link
+              href={siteConfig.links.linkedin}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div
+                className={buttonVariants({
+                  size: "sm",
+                  variant: "ghost",
+                })}
+              >
+                <Linkedin className="w-5 h-5" />
+                <span className="sr-only">Linkedin</span>
               </div>
             </Link>
 

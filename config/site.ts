@@ -13,6 +13,7 @@ export const siteConfig = {
   links: {
     twitter: "https://x.com/salimdiallo01",
     github: "https://github.com/SidyMohamedSalim",
+    linkedin: "https://www.linkedin.com/in/salim-diallo-855696264/",
   },
   dropMenu: [
     {

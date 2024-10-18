@@ -35,7 +35,7 @@ const ContactItem: React.FC<ContactItemProps> = ({
       onHoverEnd={() => setIsHovered(false)}
     >
       <motion.div
-        className="p-4 mr-6 text-white bg-blue-500 rounded-full"
+        className="p-4 mr-6 text-white bg-blue-400 rounded-full hover:bg-blue-500"
         animate={{ rotate: isHovered ? 360 : 0 }}
         transition={{ duration: 0.5 }}
       >

@@ -31,6 +31,11 @@ const ContactItem: React.FC<ContactItemProps> = ({
       rel="noreferrer noopener"
       className="flex overflow-hidden items-center p-6 bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800 dark:hover:bg-gray-700"
       whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.5 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
@@ -41,12 +46,16 @@ const ContactItem: React.FC<ContactItemProps> = ({
       >
         {icon}
       </motion.div>
-      <div>
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <h3 className="text-lg font-bold text-gray-700 dark:text-gray-200">
           {label}
         </h3>
         <p className="text-sm text-gray-600 dark:text-gray-400">{value}</p>
-      </div>
+      </motion.div>
     </motion.a>
   )
 }
@@ -79,37 +88,67 @@ export const Contacts: React.FC = () => {
     },
   ]
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  }
+
   return (
-    <section
+    <motion.section
       id="contact"
       className="py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8 }}
     >
       <div className="container px-4 mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
         >
           <TitleSection title="Let's Connect!" />
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-center text-gray-600 dark:text-gray-400">
+          <motion.p
+            className="mx-auto mt-4 max-w-2xl text-lg text-center text-gray-600 dark:text-gray-400"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             I&apos;m always excited to collaborate on new projects or just have
             a friendly chat. Don&apos;t hesitate to reach out!
-          </p>
+          </motion.p>
         </motion.div>
         <motion.div
           className="grid gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
         >
           {contactItems.map((item, index) => (
-            <ContactItem key={index} {...item} />
+            <motion.div key={index} variants={itemVariants}>
+              <ContactItem {...item} />
+            </motion.div>
           ))}
         </motion.div>
         <motion.div
           className="mt-16 text-center"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <Button
@@ -123,6 +162,6 @@ export const Contacts: React.FC = () => {
           </Button>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

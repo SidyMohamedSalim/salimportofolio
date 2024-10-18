@@ -39,10 +39,10 @@ const Hero: React.FC = () => {
               Contact Me Now
             </Link>
             <Link
-              href="#projects"
+              href="/cv"
               className={buttonVariants({ variant: "outline", size: "lg" })}
             >
-              View My Work
+              CV
             </Link>
           </div>
         </motion.div>

@@ -11,7 +11,7 @@ export const siteConfig = {
     },
   ],
   links: {
-    twitter: "https://twitter.com/SalimDiallo201",
+    twitter: "https://x.com/salimdiallo01",
     github: "https://github.com/SidyMohamedSalim",
   },
   dropMenu: [

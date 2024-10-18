@@ -11,7 +11,7 @@ import { buttonVariants } from "../ui/button"
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="container px-4 pt-32 pb-16 mx-auto">
+    <section id="home" className="container px-4 pt-24 pb-16 mx-auto md:pt-32">
       <div className="flex flex-col-reverse gap-12 justify-between items-center md:flex-row">
         <motion.div
           className="flex flex-col justify-center items-start max-w-xl"

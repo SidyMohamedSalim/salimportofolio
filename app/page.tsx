@@ -12,7 +12,6 @@ import Projects from "@/components/Sections/Projects"
 
 import Skills from "../components/Sections/Skills"
 import About from "../components/Sections/about"
-import { Icons } from "../components/icons"
 
 export default function IndexPage() {
   return (

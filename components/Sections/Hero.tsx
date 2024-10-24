@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 
@@ -10,6 +10,27 @@ import { Avatar, AvatarImage } from "../ui/avatar"
 import { buttonVariants } from "../ui/button"
 
 const Hero: React.FC = () => {
+  const inspirations = [
+    "LA NATURE",
+    "LE SPORT",
+    "L'INNOVATION",
+    "LA CRÉATIVITÉ",
+    "LA TECHNOLOGIE",
+    "L'ART",
+    "LE VOYAGE",
+    "LA SCIENCE",
+  ]
+
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % inspirations.length)
+    }, 3000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section id="home" className="container px-4 pt-24 pb-16 mx-auto md:pt-32">
       <div className="flex flex-col-reverse gap-12 justify-between items-center md:flex-row">
@@ -25,6 +46,7 @@ const Hero: React.FC = () => {
               Salim Diallo
             </span>
           </h1>
+
           <p className="mb-6 text-xl text-gray-600 dark:text-gray-300">
             Software Engineer passionate about technology. My motto: Always
             learning, always improving.
@@ -46,6 +68,20 @@ const Hero: React.FC = () => {
             </Link>
           </div>
         </motion.div>
+        <div className="flex flex-col items-center mb-4 w-full">
+          <span className="text-lg text-gray-600 dark:text-gray-400">
+            INSPIRÉ PAR
+          </span>
+          <motion.span
+            key={currentIndex}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400 md:text-4xl"
+          >
+            {inspirations[currentIndex]}
+          </motion.span>
+        </div>
         <motion.div
           className="relative"
           initial={{ opacity: 0, scale: 0.5 }}

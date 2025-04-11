@@ -170,7 +170,7 @@ const Skills: React.FC = () => {
         >
           <TitleSection title="Compétences" />
           <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Technologies et outils que j'utilise pour créer des applications modernes et performantes.
+            Technologies et outils que j&apos;utilise pour créer des applications modernes et performantes.
           </p>
         </motion.div>
         

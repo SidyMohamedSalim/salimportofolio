@@ -138,7 +138,7 @@ const HeroPortfolio = () => {
             
             {/* Nom principal avec effet */}
             <div>
-              <h1 className="text-6xl sm:text-7xl font-bold tracking-tighter">
+              <h1 className="text-3xl sm:text-7xl font-bold tracking-tighter">
                 <span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 dark:from-blue-400 dark:via-indigo-300 dark:to-purple-400">
                  Salim Diallo
                 </span>

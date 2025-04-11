@@ -29,7 +29,7 @@ const Service: React.FC<ServiceProps> = ({
     transition={{ duration: 0.5 }}
   >
     <motion.div
-      className={`flex flex-col h-full rounded-2xl border transition-all duration-300
+      className={`relative flex flex-col h-full rounded-2xl border transition-all duration-300
       ${isHighlighted 
         ? "text-white bg-gradient-to-br from-blue-600 to-indigo-600 border-transparent shadow-xl shadow-blue-500/20 dark:shadow-blue-900/30" 
         : "bg-white/80 backdrop-blur-sm border-slate-200 hover:border-blue-200 dark:bg-slate-800/80 dark:border-slate-700 dark:hover:border-blue-800"}`}
@@ -146,7 +146,7 @@ const ServiceCategory: React.FC<ServiceCategoryProps> = ({
       </p>
     </div>
     
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 relative">
       {services.map((service, serviceIndex) => (
         <Service key={serviceIndex} {...service} />
       ))}

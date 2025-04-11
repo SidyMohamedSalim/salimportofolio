@@ -20,13 +20,9 @@ export default function IndexPage() {
     <div>
       {/* Home Section */}
       <Hero />
-
       <Services />
-
       <MarketingHook />
       <Projects />
-
-
 
       <Contacts />
 

@@ -81,9 +81,11 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-3xl lg:text-8xl font-bold tracking-tight mb-4"
               >
-                <span className="inline-block bg-clip-text text-transparentbg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
-                  DigiSolutions
+                 <h1 className="text-3xl sm:text-7xl font-bold tracking-tighter">
+                <span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 dark:from-blue-400 dark:via-indigo-300 dark:to-purple-400">
+                 DigiSolutions
                 </span>
+              </h1>
               </motion.h1>
               
               {/* Sous-titre animé */}

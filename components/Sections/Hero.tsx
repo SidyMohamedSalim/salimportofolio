@@ -79,9 +79,9 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-6xl lg:text-8xl font-bold tracking-tight mb-4"
+                className="text-3xl lg:text-8xl font-bold tracking-tight mb-4"
               >
-                <span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
+                <span className="inline-block bg-clip-text text-transparentbg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
                   DigiSolutions
                 </span>
               </motion.h1>

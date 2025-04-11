@@ -8,7 +8,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
 export function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -167,7 +167,7 @@ export function SiteHeader() {
       </div>
 
       {/* Menu mobile */}
-      <AnimatePresence>
+ 
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
@@ -267,7 +267,7 @@ export function SiteHeader() {
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
+
     </header>
   )
 }

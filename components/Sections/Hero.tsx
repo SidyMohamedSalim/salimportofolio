@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from "react"
 import Link from "next/link"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { ArrowRight, Github, Linkedin, Briefcase, Users, BarChart, ChevronRight, Globe, Code, Star } from "lucide-react"
 
 const Hero = () => {
@@ -88,7 +88,6 @@ const Hero = () => {
               
               {/* Sous-titre animé */}
               <div className="h-16 mb-6 overflow-hidden">
-                <AnimatePresence mode="wait">
                   <motion.h2
                     key={textIndex}
                     initial={{ y: 40, opacity: 0 }}
@@ -99,7 +98,7 @@ const Hero = () => {
                   >
                     {expertises[textIndex]}
                   </motion.h2>
-                </AnimatePresence>
+         
               </div>
               
               {/* Description avec mise en avant */}
@@ -159,7 +158,7 @@ const Hero = () => {
                 </div>
                 
                 <div className="relative h-12 overflow-hidden">
-                  <AnimatePresence mode="wait">
+         
                     <motion.div
                       key={currentIndex}
                       initial={{ y: 40, opacity: 0 }}
@@ -172,7 +171,7 @@ const Hero = () => {
                         {services[currentIndex]}
                       </h3>
                     </motion.div>
-                  </AnimatePresence>
+                  
                 </div>
                 
                 <div className="flex gap-1 mt-3">

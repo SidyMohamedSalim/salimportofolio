@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from "react"
 import Link from "next/link"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { ArrowRight, Download, Github, Linkedin, Mail, Code, Terminal, FileText, History } from "lucide-react"
 import Image from "next/image"
 
@@ -148,7 +148,7 @@ const HeroPortfolio = () => {
           
           {/* Profession avec animation */}
           <div className="h-24 mb-8 overflow-hidden">
-            <AnimatePresence mode="wait">
+      
               <motion.h2
                 key={textIndex}
                 initial={{ y: 40, opacity: 0 }}
@@ -159,7 +159,7 @@ const HeroPortfolio = () => {
               >
                 {titles[textIndex]}
               </motion.h2>
-            </AnimatePresence>
+           
           </div>
           
           {/* Description principale */}

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react"
 import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { ExternalLink, Github, Code, ArrowRight, Bookmark, Tag, Calendar } from "lucide-react"
 
 import { TitleSection } from "../TitleSection"
@@ -219,7 +219,7 @@ const Projects: React.FC = () => {
         </motion.div>
         
         {/* Grille de projets avec animation */}
-        <AnimatePresence mode="wait">
+     
           <motion.div
             key={filter}
             initial={{ opacity: 0 }}
@@ -232,7 +232,7 @@ const Projects: React.FC = () => {
               <ProjectCard key={`${filter}-${index}`} {...project} />
             ))}
           </motion.div>
-        </AnimatePresence>
+      
         
         {/* Bouton "Voir plus" */}
         <motion.div 

@@ -42,7 +42,7 @@ const Hero = () => {
   if (!mounted) return null
   
   return (
-    <section className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-blue-950 relative overflow-hidden">
+    <section className="w-full bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-blue-950 relative overflow-hidden">
       {/* Effet de grille moderne */}
       <div className="absolute inset-0 bg-grid-pattern opacity-10 dark:opacity-5"></div>
       
@@ -258,23 +258,7 @@ const Hero = () => {
       
       </div>
       
-      {/* Ajout de CSS pour le motif de grille en arrière-plan */}
-      <style jsx>{`
-        .bg-grid-pattern {
-          background-size: 30px 30px;
-          background-image: 
-            linear-gradient(to right, rgba(100, 116, 139, 0.05) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(100, 116, 139, 0.05) 1px, transparent 1px);
-        }
-        
-        @media (prefers-color-scheme: dark) {
-          .bg-grid-pattern {
-            background-image: 
-              linear-gradient(to right, rgba(226, 232, 240, 0.05) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(226, 232, 240, 0.05) 1px, transparent 1px);
-          }
-        }
-      `}</style>
+   
     </section>
   )
 }

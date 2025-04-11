@@ -39,18 +39,18 @@ export function SiteHeader() {
       scrolled ? "shadow-md" : ""
     }`}>
       {/* Barre de contact supérieure - masquée sur mobile */}
-      <div className="hidden sm:flex w-full items-center justify-between py-1 px-4 bg-blue-600 dark:bg-blue-900 text-white text-sm border-b border-blue-500 dark:border-blue-800">
+      <div className="hidden sm:flex w-full items-center justify-between py-1 px-6 bg-blue-600 dark:bg-blue-900 text-white text-sm border-b border-blue-500 dark:border-blue-800">
         <div className="flex items-center space-x-4">
           <a href="tel:+33123456789" className="flex items-center space-x-1 hover:text-blue-200 transition-colors">
             <Phone className="w-3 h-3" />
-            <span>+33 1 23 45 67 89</span>
+            <span>+212 684499227</span>
           </a>
           <a href="mailto:contact@digisolutions.fr" className="flex items-center space-x-1 hover:text-blue-200 transition-colors">
             <Mail className="w-3 h-3" />
-            <span>contact@digisolutions.fr</span>
+            <span>sidymamadousalim@gmail.com</span>
           </a>
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 pr-4">
           <Link
             href={siteConfig.links.linkedin}
             target="_blank"

@@ -133,7 +133,7 @@ export const Contacts: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Besoin d'une solution sur mesure pour votre projet digital ? Je suis toujours à la recherche de nouvelles collaborations passionnantes.
+            Besoin d&apos;une solution sur mesure pour votre projet digital ? Je suis toujours à la recherche de nouvelles collaborations passionnantes.
           </motion.p>
         </motion.div>
 
@@ -243,10 +243,10 @@ export const Contacts: React.FC = () => {
                 <div className="p-3 bg-white/20 rounded-xl mr-4">
                   <MessageSquare size={24} className="text-white" />
                 </div>
-                <h3 className="text-xl font-bold">Besoin d'une réponse rapide ?</h3>
+                <h3 className="text-xl font-bold">Besoin d&apos;une réponse rapide ?</h3>
               </div>
               <p className="mb-4 text-white/80">
-                Pour les demandes urgentes, n'hésitez pas à me contacter directement.
+                Pour les demandes urgentes, n&apos;hésitez pas à me contacter directement.
               </p>
               <Button
                 onClick={() => window.location.href = `mailto:${siteConfig.email}`}
@@ -269,7 +269,7 @@ export const Contacts: React.FC = () => {
         >
           <div className="text-center">
             <p className="text-lg font-medium text-gray-600 dark:text-gray-300">Rabat, Morroco</p>
-            <p className="text-sm text-gray-500 dark:text-gray-400">Disponible pour des projets partout au Maroc et à l'international</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400">Disponible pour des projets partout au Maroc et à l&apos;international</p>
           </div>
         </motion.div>
       </div>

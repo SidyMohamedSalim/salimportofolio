@@ -262,7 +262,7 @@ const BlogPage = () => {
                         whileHover={{ x: 5 }}
                         className="flex items-center text-blue-600 dark:text-blue-400 font-medium"
                       >
-                        Lire l'article
+                        Lire l&apos;article
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </motion.div>
                     </div>
@@ -416,7 +416,7 @@ const BlogPage = () => {
                   Vous avez un projet digital en tête ?
                 </h2>
                 <p className="text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
-                  Notre équipe d'experts est prête à transformer votre vision en réalité. Contactez-nous dès aujourd'hui pour discuter de votre projet.
+                  Notre équipe d&apos;experts est prête à transformer votre vision en réalité. Contactez-nous dès aujourd&apos;hui pour discuter de votre projet.
                 </p>
                 <Link href="/contact">
                   <motion.div 

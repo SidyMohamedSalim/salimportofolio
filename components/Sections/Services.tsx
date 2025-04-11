@@ -271,7 +271,7 @@ const Services: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-3xl font-bold text-slate-800 dark:text-white mb-6">
-            Besoin d'une solution sur mesure?
+            Besoin d&apos;une solution sur mesure?
           </h3>
           <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8">
             Nos experts sont là pour créer une solution parfaitement adaptée à vos besoins spécifiques.

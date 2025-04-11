@@ -181,7 +181,7 @@ const HeroPortfolio = () => {
           >
             <div className="flex flex-col items-center p-6 bg-white/70 dark:bg-slate-800/70 rounded-xl backdrop-blur-sm border border-slate-200 dark:border-slate-700">
               <span className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">5+</span>
-              <span className="text-slate-600 dark:text-slate-300">Années d'expérience</span>
+              <span className="text-slate-600 dark:text-slate-300">Années d&apos;expérience</span>
             </div>
             <div className="flex flex-col items-center p-6 bg-white/70 dark:bg-slate-800/70 rounded-xl backdrop-blur-sm border border-slate-200 dark:border-slate-700">
               <span className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">50+</span>

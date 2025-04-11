@@ -128,7 +128,7 @@ const MarketingHook = () => {
                 ))}
               </div>
               <p className="text-xl md:text-2xl text-slate-700 dark:text-slate-200 italic mb-4">
-                "DigiSolutions a transformé notre présence en ligne et multiplié nos ventes par 3 en seulement 6 mois. Leur expertise technique et leur vision stratégique sont inégalées."
+                DigiSolutions a transformé notre présence en ligne et multiplié nos ventes par 3 en seulement 6 mois. Leur expertise technique et leur vision stratégique sont inégalées.
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-lg">

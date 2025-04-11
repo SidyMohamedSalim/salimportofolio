@@ -6,8 +6,16 @@ export const siteConfig = {
   email: "sidymamadousalim@gmail.com",
   mainNav: [
     {
-      title: "CV",
-      href: "/cv",
+      title: "portfolio",
+      href: "/portfolio",
+    },
+    {
+      title: "Blog",
+      href: "/blog",
+    },
+    {
+      title: "Contact",
+      href: "/contact",
     },
   ],
   links: {

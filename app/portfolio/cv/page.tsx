@@ -1,6 +1,6 @@
 import React from "react"
 
-import { CV } from "@/components/Sections/Cv"
+import { CV } from "@/components/Sections/portfolio/Cv"
 
 type Props = {}
 

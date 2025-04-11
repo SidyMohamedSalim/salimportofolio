@@ -10,26 +10,31 @@ import Footer from "@/components/Sections/Footer"
 import Hero from "@/components/Sections/Hero"
 import Projects from "@/components/Sections/Projects"
 
-import Skills from "../components/Sections/portfolio/Skills"
-import About from "../components/Sections/portfolio/about"
 import Services from "@/components/Sections/Services"
-import MarketingHook from "@/components/Sections/MarketingHook"
+import HeroPortfolio from "@/components/Sections/portfolio/HeroPortfolio"
+import Skills from "@/components/Sections/portfolio/Skills"
+import About from "@/components/Sections/portfolio/about"
 
-export default function IndexPage() {
+export default function PortofolioPage() {
   return (
     <div>
       {/* Home Section */}
-      <Hero />
+      <HeroPortfolio />
 
-      <Services />
+      {/* Skills Section */}
+      <Skills />
 
-      <MarketingHook />
+      {/* Projects Section  */}
       <Projects />
 
+      {/* About Section */}
+      <About />
 
+      {/* Contact Section */}
 
       <Contacts />
 
+      {/* Footer */}
       <Footer />
     </div>
   )

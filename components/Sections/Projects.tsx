@@ -1,128 +1,141 @@
 "use client"
 
-import React from "react"
+import React, { useState } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion"
-import { ExternalLink, Github } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
+import { ExternalLink, Github, Code, ArrowRight, Bookmark, Tag, Calendar } from "lucide-react"
 
 import { TitleSection } from "../TitleSection"
 
 interface ProjectCardProps {
   title: string
+  description: string
   imageSrc: string
   githubLink?: string
   liveLink?: string
+  technologies: string[]
+  date: string
+  category: string
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
+  description,
   imageSrc,
   githubLink,
   liveLink,
+  technologies,
+  date,
+  category
 }) => {
-  // Animation pour l'effet de survol de la carte
-  const cardVariants = {
-    initial: { scale: 1 },
-    hover: {
-      scale: 1.03,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 10,
-      },
-    },
-  }
-
-  // Animation pour l'image
-  const imageVariants = {
-    initial: { scale: 1 },
-    hover: {
-      scale: 1.1,
-      transition: { duration: 0.4 },
-    },
-  }
-
-  // Animation pour le titre
-  const titleVariants = {
-    initial: { y: 0 },
-    hover: {
-      y: -5,
-      transition: { duration: 0.2 },
-    },
-  }
-
-  // Animation pour les boutons
-  const buttonVariants = {
-    initial: { scale: 1 },
-    hover: {
-      scale: 1.1,
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 10,
-      },
-    },
-    tap: {
-      scale: 0.9,
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 10,
-      },
-    },
-  }
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.div
-      variants={cardVariants}
-      initial="initial"
-      whileHover="hover"
-      className="overflow-hidden relative bg-white rounded-lg shadow-lg dark:bg-gray-800"
-      style={{ transformOrigin: "center" }}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 30 }}
+      whileHover={{ y: -8 }}
+      transition={{ duration: 0.4 }}
+      className="group relative overflow-hidden rounded-xl bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-all duration-300"
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
     >
-      <div className="overflow-hidden relative w-full h-48">
-        <motion.div variants={imageVariants} className="w-full h-full">
-          <Image
-            src={imageSrc}
-            layout="fill"
-            objectFit="cover"
-            alt={title}
-            className="transition-all duration-300"
-          />
-        </motion.div>
+      {/* Badge de catégorie */}
+      <div className="absolute top-4 left-4 z-10">
+        <div className="flex items-center gap-1.5 rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm px-3 py-1 text-xs font-medium text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700 shadow-sm">
+          <Tag className="w-3 h-3" />
+          {category}
+        </div>
       </div>
-      <div className="flex flex-col flex-1 justify-between p-6">
-        <motion.h3
-          variants={titleVariants}
-          className="mb-2 text-xl font-semibold text-gray-900 dark:text-white"
-        >
-          {title}
-        </motion.h3>
-        <div className="flex justify-end mt-4 space-x-4">
-          {githubLink && (
-            <motion.a
-              variants={buttonVariants}
-              whileTap="tap"
-              href={githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-gray-700 bg-gray-200 rounded-full transition-colors hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
+      
+      {/* Image du projet avec overlay au survol */}
+      <div className="relative w-full aspect-video overflow-hidden">
+        <Image
+          src={imageSrc}
+          alt={title}
+          width={600}
+          height={340}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isHovered ? 0.7 : 0 }}
+          transition={{ duration: 0.3 }}
+          className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"
+        />
+      </div>
+      
+      <div className="p-6">
+        {/* En-tête avec date */}
+        <div className="flex items-center justify-between mb-2">
+          <h3 className="text-xl md:text-2xl font-bold text-slate-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+            {title}
+          </h3>
+          <div className="flex items-center text-xs text-slate-500 dark:text-slate-400">
+            <Calendar className="w-3 h-3 mr-1" />
+            {date}
+          </div>
+        </div>
+        
+        {/* Description */}
+        <p className="text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
+          {description}
+        </p>
+        
+        {/* Technologies utilisées */}
+        <div className="flex flex-wrap gap-2 mb-5">
+          {technologies.map((tech, i) => (
+            <span 
+              key={i} 
+              className="px-2 py-1 text-xs font-medium rounded-md bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-300"
             >
-              <Github size={20} />
-            </motion.a>
-          )}
-          {liveLink && (
-            <motion.a
-              variants={buttonVariants}
-              whileTap="tap"
-              href={liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-white bg-blue-500 rounded-full transition-colors hover:bg-blue-600"
-            >
-              <ExternalLink size={20} />
-            </motion.a>
-          )}
+              {tech}
+            </span>
+          ))}
+        </div>
+        
+        {/* Boutons d'action */}
+        <div className="flex items-center justify-between pt-3 border-t border-slate-200 dark:border-slate-700">
+          <div className="flex gap-3">
+            {githubLink && (
+              <motion.a
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                href={githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-slate-700 bg-slate-100 rounded-full transition-colors hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600"
+                aria-label="Voir le code sur GitHub"
+              >
+                <Github size={18} />
+              </motion.a>
+            )}
+            {liveLink && (
+              <motion.a
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                href={liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-full transition-colors"
+                aria-label="Voir le site en ligne"
+              >
+                <ExternalLink size={18} />
+              </motion.a>
+            )}
+          </div>
+          
+          <motion.a
+            whileHover={{ x: 4 }}
+            href={liveLink || githubLink || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
+          >
+            Voir détails
+            <ArrowRight className="w-4 h-4" />
+          </motion.a>
         </div>
       </div>
     </motion.div>
@@ -130,92 +143,119 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }
 
 const Projects: React.FC = () => {
+  const [filter, setFilter] = useState<string>("all");
+  
   const projects: ProjectCardProps[] = [
     {
       title: "Senegal Premium Tour",
+      description: "Site web professionnel pour une agence de voyage au Sénégal, avec réservation en ligne et présentation des circuits touristiques.",
       imageSrc: "/projets/tourism.png",
       liveLink: "https://www.senegalpremiumtour.com/",
+      technologies: ["React", "Next.js", "Tailwind CSS", "Strapi"],
+      date: "Mar 2023",
+      category: "Web"
     },
     {
       title: "Reviser avec l'IA",
+      description: "Application d'aide à la révision utilisant l'intelligence artificielle pour créer des fiches de révision personnalisées.",
       imageSrc: "/projets/revise.png",
       githubLink: "https://github.com/SidyMohamedSalim/Revise-App",
       liveLink: "https://revise-app-ia.vercel.app/",
+      technologies: ["React", "OpenAI API", "Prisma", "TypeScript"],
+      date: "Jan 2024",
+      category: "IA"
     },
     {
       title: "Travel Site",
+      description: "Plateforme de réservation de voyages avec comparaison de prix et suggestions personnalisées basées sur les préférences utilisateurs.",
       imageSrc: "/projets/travel.png",
       githubLink: "https://github.com/SidyMohamedSalim/easyTourisme",
       liveLink: "https://travelsalim.netlify.app",
+      technologies: ["Vue.js", "Express", "MongoDB", "Docker"],
+      date: "Nov 2023",
+      category: "Web"
     },
-  ]
+  ];
 
-  // Animation pour l'apparition séquentielle des cartes
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  }
-
-  // Animation pour chaque carte individuelle
-  const cardVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-      rotateX: -15,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      rotateX: 0,
-      transition: {
-        type: "spring",
-        duration: 0.8,
-        bounce: 0.4,
-      },
-    },
-  }
+  const categories = ["all", ...new Set(projects.map(project => project.category.toLowerCase()))];
+  const filteredProjects = filter === "all" 
+    ? projects 
+    : projects.filter(project => project.category.toLowerCase() === filter);
 
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="py-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
       <div className="container px-4 mx-auto">
+        {/* En-tête de section avec animation */}
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{
-            duration: 0.6,
-            type: "spring",
-            bounce: 0.4,
-          }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16"
         >
           <TitleSection title="Projects" />
+          <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
+            Découvrez une sélection de mes projets les plus récents en développement logiciel et data engineering.
+          </p>
+          
+          {/* Filtres de catégorie */}
+          <div className="flex flex-wrap justify-center gap-3 mt-8">
+            {categories.map((category) => (
+              <motion.button
+                key={category}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setFilter(category)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  filter === category 
+                    ? "bg-blue-600 text-white dark:bg-blue-500" 
+                    : "bg-white text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700"
+                }`}
+              >
+                {category.charAt(0).toUpperCase() + category.slice(1)}
+              </motion.button>
+            ))}
+          </div>
         </motion.div>
-        <motion.div
-          className="grid gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+        
+        {/* Grille de projets avec animation */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={filter}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+          >
+            {filteredProjects.map((project, index) => (
+              <ProjectCard key={`${filter}-${index}`} {...project} />
+            ))}
+          </motion.div>
+        </AnimatePresence>
+        
+        {/* Bouton "Voir plus" */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
+          className="flex justify-center mt-16"
         >
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              style={{ perspective: 1000 }}
-            >
-              <ProjectCard {...project} />
-            </motion.div>
-          ))}
+          <motion.a
+            href="/all-projects"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group px-6 py-3 bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 rounded-lg text-slate-800 dark:text-white font-medium border border-slate-200 dark:border-slate-700 shadow-sm flex items-center gap-2 transition-all duration-300"
+          >
+            <Bookmark className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+            Voir tous les projets
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </motion.a>
         </motion.div>
       </div>
     </section>
   )
 }
 
-export default Projects
+export default Projects;

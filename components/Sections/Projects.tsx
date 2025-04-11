@@ -177,7 +177,7 @@ const Projects: React.FC = () => {
     },
   ];
 
-  const categories = ["all", ...new Set(projects.map(project => project.category.toLowerCase()))];
+  const categories = ["all", "Web", "IA", "Data"];
   const filteredProjects = filter === "all" 
     ? projects 
     : projects.filter(project => project.category.toLowerCase() === filter);

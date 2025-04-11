@@ -162,6 +162,8 @@ const Services: React.FC = () => {
       services: [
         { 
           name: "Sites Corporate", 
+          isColor: true,
+          isHighlighted: true,
           icon: "/tailwindcss-icon.svg",
           description: "Des sites vitrines élégants et performants pour présenter votre entreprise et vos services." 
         },
@@ -175,7 +177,6 @@ const Services: React.FC = () => {
           name: "E-commerce", 
           icon: "/vercel-icon.svg", 
           isColor: true,
-          isHighlighted: true,
           description: "Solutions e-commerce personnalisées et optimisées pour les conversions et les ventes." 
         },
       ],

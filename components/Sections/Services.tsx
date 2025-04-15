@@ -259,7 +259,7 @@ const Services: React.FC = () => {
             Besoin d&apos;une solution technologique sur mesure?
           </h3>
           <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8">
-            Nos experts sont à votre disposition pour développer une solution parfaitement adaptée à vos objectifs d'automatisation et de développement.
+            Nos experts sont à votre disposition pour développer une solution parfaitement adaptée à vos objectifs d&apos;automatisation et de développement.
           </p>
           
           <Link href="/contact">

@@ -89,7 +89,7 @@ const Skills: React.FC = () => {
       title: "Web Développement",
       skills: [
         { name: "Next.js", isHighlighted: true },
-        { name: "Node" },
+        { name: "Node Js" },
         { name: "Django" },
         { name: "Laravel" },
       ],

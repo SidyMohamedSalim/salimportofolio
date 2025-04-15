@@ -98,8 +98,8 @@ const Skills: React.FC = () => {
     {
       title: "Web Scraping",
       skills: [
-        { name: "Selenium", isHighlighted: true },
-        { name: "BeautifulSoup" },
+        { name: "Selenium" },
+        { name: "BeautifulSoup", isHighlighted: true },
         { name: "PlayWright" },
       ],
       index: 1,
@@ -107,8 +107,8 @@ const Skills: React.FC = () => {
     {
       title: "Automation",
       skills: [
-        { name: "Make", isHighlighted: true },
-        { name: "n8n" },
+        { name: "Make"},
+        { name: "n8n", isHighlighted: true },
       ],
       index: 2,
     },

@@ -104,12 +104,9 @@ export function GeekTypingAnimation({
 }
 
 export default function About() {
-  const paragraph1 = "Hi, I'm Salim Diallo. Delighted to meet you."
-  const paragraph2 = `Since the start of my journey as an Independent Developer more than 5 years ago
-    years, I worked remotely for agencies, consulted startups and collaborated with talented people to create digital products for
-    professional and consumer use.`
-  const paragraph3 = `I am quietly confident, naturally curious and I constantly working to improve my Skills and to
-    remain up to date at a time.`
+  const paragraph1 = "Bonjour, je suis Salim Diallo. Ravi de vous rencontrer."
+  const paragraph2 = "Depuis le début de mon parcours en tant que Développeur Indépendant, j'ai travaillé à distance pour des agences, conseillé des startups et collaboré avec des personnes talentueuses pour créer des produits numériques à usage professionnel et grand public."
+  const paragraph3 = "Je suis discrètement confiant, naturellement curieux et je travaille constamment à améliorer mes compétences et à rester à jour."
 
   return (
     <section
@@ -120,7 +117,7 @@ export default function About() {
       <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] opacity-10 shadow-xl ring-1 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
       <div className="mx-auto max-w-2xl lg:max-w-4xl">
         <div className="mb-12 text-center">
-          <TitleSection title="About me" />
+          <TitleSection title="À propos de moi" />
         </div>
         <figure className="mt-10">
           <blockquote className="space-y-8 text-base sm:text-lg">
@@ -160,7 +157,7 @@ export default function About() {
               <span className="text-green-500">|</span>
               <div>
                 <GeekTypingAnimation
-                  text="CEO of Ohm Vision"
+                  text="PDG de Ohm Vision"
                   duration={50}
                   delay={9000}
                   className="opacity-0 animate-fadeIn"

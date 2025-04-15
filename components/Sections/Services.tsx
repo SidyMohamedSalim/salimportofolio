@@ -3,7 +3,7 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { TitleSection } from "../TitleSection"
-import { CheckCircle, ArrowRight, Plus, ArrowUpRight, Star } from "lucide-react"
+import { CheckCircle, ArrowRight, ArrowUpRight, Star } from "lucide-react"
 import Link from "next/link"
 
 interface ServiceProps {
@@ -84,17 +84,7 @@ const Service: React.FC<ServiceProps> = ({
           {description}
         </p>
         
-        {/* Fonctionnalités */}
-        <ul className="space-y-3 mb-8">
-          {[1, 2, 3].map((item, i) => (
-            <li key={i} className="flex items-center">
-              <CheckCircle className={`mr-3 h-5 w-5 ${isHighlighted ? "text-blue-200" : "text-blue-500 dark:text-blue-400"}`} />
-              <span className={`text-sm ${isHighlighted ? "text-blue-50" : "text-slate-700 dark:text-slate-300"}`}>
-                {`Fonctionnalité ${item}`}
-              </span>
-            </li>
-          ))}
-        </ul>
+
       </div>
       
       {/* Bouton d'action */}
@@ -161,71 +151,65 @@ const Services: React.FC = () => {
       description: "Création de sites et applications web modernes, rapides et sécurisés qui correspondent à vos besoins.",
       services: [
         { 
-          name: "Sites Corporate", 
+          name: "Sites Web Dynamiques", 
           isColor: true,
           isHighlighted: true,
           icon: "/tailwindcss-icon.svg",
-          description: "Des sites vitrines élégants et performants pour présenter votre entreprise et vos services." 
+          description: "Des sites web interactifs avec des fonctionnalités avancées optimisés pour mobile et SEO." 
         },
         { 
           name: "Applications Web", 
           icon: "/react-icon.svg", 
           isColor: true,
-          description: "Des applications web complexes et interactives utilisant les technologies les plus récentes." 
+          description: "Des applications web complexes et interactives utilisant React, Next.js et d'autres technologies modernes." 
         },
         { 
-          name: "E-commerce", 
-          icon: "/vercel-icon.svg", 
-          isColor: true,
-          description: "Solutions e-commerce personnalisées et optimisées pour les conversions et les ventes." 
+          name: "API & Backends", 
+          icon: "/nodejs-icon.svg", 
+          description: "Construction d'API RESTful et de backends puissants pour vos applications et systèmes." 
         },
       ],
       index: 0,
     },
     {
-      title: "Solutions Digitales",
-      description: "Notre expertise technique pour développer des produits digitaux complets et innovants.",
+      title: "Web Scraping",
+      description: "Solutions d'extraction et d'analyse de données web pour alimenter vos systèmes d'information.",
       services: [
         { 
-          name: "Design UI/UX", 
-          icon: "/figma-icon.svg", 
-          isColor: true,
-          description: "Interfaces utilisateur intuitives et esthétiques pour une expérience utilisateur optimale." 
-        },
-        {
-          name: "Applications React",
-          icon: "/typescript-icon.svg",
+          name: "Extraction de Données", 
+          icon: "/python-icon.svg", 
           isHighlighted: true,
-          description: "Applications front-end robustes et performantes développées avec React et TypeScript."
+          description: "Collecte automatisée de données structurées à partir de sites web et de plateformes en ligne." 
         },
         { 
-          name: "API & Backends", 
-          icon: "/nodejs-icon.svg", 
-          description: "Construction d'API RESTful et de backends puissants pour vos applications." 
+          name: "Monitoring Web", 
+          icon: "/postgresql-icon.svg", 
+          isColor: true,
+          description: "Surveillance des changements sur des pages web et alertes en temps réel pour votre veille concurrentielle." 
+        },
+        { 
+          name: "Cleaning de Data", 
+          icon: "/django-icon.svg", 
+          description: "Enrichissement de vos bases de données avec des informations extraites du web de manière éthique." 
         },
       ],
       index: 1,
     },
     {
-      title: "Data & Intelligence",
-      description: "Exploitation des données et mise en place de solutions d'analyse avancées pour votre entreprise.",
+      title: "Automatisation IA",
+      description: "Exploitation de l'intelligence artificielle pour automatiser vos processus et optimiser votre productivité.",
       services: [
         { 
-          name: "Data Engineering", 
+          name: "Traitement Automatisé", 
           icon: "/python-icon.svg", 
           isHighlighted: true,
-          description: "Collecte, stockage et traitement de données pour alimenter vos systèmes décisionnels." 
+          description: "Automatisation de tâches répétitives grâce à des scripts et workflows intelligents." 
         },
         { 
-          name: "Business Intelligence", 
-          icon: "/postgresql-icon.svg", 
+          name: "Integration IA", 
+          icon: "/typescript-icon.svg", 
           isColor: true,
-          description: "Tableaux de bord et visualisations pour analyser vos données et prendre de meilleures décisions." 
-        },
-        { 
-          name: "Machine Learning", 
-          icon: "/django-icon.svg", 
-          description: "Développement de modèles d'IA pour automatiser et optimiser vos processus." 
+          description: "Intégration de modèles d'IA dans vos systèmes existants pour améliorer l'efficacité et la prise de décision." 
         },
       ],
       index: 2,
@@ -252,7 +236,7 @@ const Services: React.FC = () => {
         >
           <TitleSection title="Nos Services" />
           <p className="mt-6 text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-            Des solutions technologiques modernes et performantes pour répondre aux besoins spécifiques de votre entreprise.
+            Solutions technologiques avancées en développement web, web scraping et automatisation IA pour transformer votre entreprise.
           </p>
         </motion.div>
         
@@ -272,10 +256,10 @@ const Services: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-3xl font-bold text-slate-800 dark:text-white mb-6">
-            Besoin d&apos;une solution sur mesure?
+            Besoin d&apos;une solution technologique sur mesure?
           </h3>
           <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8">
-            Nos experts sont là pour créer une solution parfaitement adaptée à vos besoins spécifiques.
+            Nos experts sont à votre disposition pour développer une solution parfaitement adaptée à vos objectifs d'automatisation et de développement.
           </p>
           
           <Link href="/contact">

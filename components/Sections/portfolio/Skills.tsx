@@ -6,65 +6,50 @@ import { TitleSection } from "../../TitleSection"
 
 interface SkillProps {
   name: string
-  icon: string
-  isColor?: boolean
   isHighlighted?: boolean
 }
 
 const Skill: React.FC<SkillProps> = ({
   name,
-  icon,
-  isColor = false,
   isHighlighted = false,
 }) => (
   <motion.div
-    className={`mb-4 ${isHighlighted ? "order-first" : ""}`}
-    initial={{ opacity: 0, y: 20 }}
+    className={`mb-3 ${isHighlighted ? "order-first" : ""}`}
+    initial={{ opacity: 0, y: 10 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.5 }}
-    transition={{ duration: 0.5 }}
+    transition={{ duration: 0.4 }}
   >
     <motion.div
-      className={`flex items-center p-4 space-x-3 rounded-xl border transition-all duration-300 
+      className={`p-4 rounded-xl border transition-all duration-300 
       ${isHighlighted 
-        ? "text-white bg-gradient-to-r from-blue-600 to-purple-600 border-transparent shadow-lg shadow-blue-500/20 dark:shadow-blue-900/30" 
-        : "bg-white border-gray-100 hover:border-blue-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:border-blue-900"}`}
+        ? "text-white bg-gradient-to-r from-indigo-600 to-violet-500 border-transparent shadow-lg shadow-indigo-500/20 dark:shadow-indigo-900/30" 
+        : "bg-white border-gray-100 hover:border-indigo-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:border-indigo-900"}`}
       whileHover={{ 
         scale: 1.03, 
-        boxShadow: isHighlighted ? "0 10px 25px -5px rgba(59, 130, 246, 0.3)" : "0 10px 25px -5px rgba(0, 0, 0, 0.1)" 
+        boxShadow: isHighlighted ? "0 10px 25px -5px rgba(99, 102, 241, 0.3)" : "0 10px 25px -5px rgba(0, 0, 0, 0.1)" 
       }}
       whileTap={{ scale: 0.98 }}
     >
-      <div className={`relative flex items-center justify-center h-10 w-10 rounded-lg overflow-hidden
-        ${!isHighlighted 
-          ? "bg-blue-50 dark:bg-gray-700" 
-          : "bg-white/20"}`}
-      >
-        <motion.img
-          src={icon}
-          alt={`${name} icon`}
-          className={`h-6 w-6 ${isColor ? "" : "dark:filter-none"}`}
-          whileHover={{ rotate: 360 }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
-        />
-      </div>
-      <span
-        className={`text-sm font-medium ${
-          isHighlighted ? "text-white" : "text-gray-800 dark:text-gray-100"
-        }`}
-      >
-        {name}
-      </span>
-      {isHighlighted && (
-        <motion.span
-          className="px-2 py-1 ml-auto text-xs font-semibold text-blue-600 bg-white rounded-full shadow-sm"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2, type: "spring" }}
+      <div className="flex items-center justify-between">
+        <span
+          className={`font-medium ${
+            isHighlighted ? "text-white" : "text-gray-800 dark:text-gray-100"
+          }`}
         >
-          Favoris
-        </motion.span>
-      )}
+          {name}
+        </span>
+        {isHighlighted && (
+          <motion.span
+            className="px-2 py-1 text-xs font-semibold text-indigo-600 bg-white/90 rounded-full shadow-sm"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, type: "spring" }}
+          >
+            Expert
+          </motion.span>
+        )}
+      </div>
     </motion.div>
   </motion.div>
 )
@@ -81,17 +66,16 @@ const SkillCategory: React.FC<SkillCategoryProps> = ({
   index,
 }) => (
   <motion.div
-    className="w-full md:py-6"
-    initial={{ opacity: 0, x: -30 }}
-    whileInView={{ opacity: 1, x: 0 }}
+    className="w-full"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.5 }}
     transition={{ duration: 0.5, delay: index * 0.1 }}
   >
-    <h3 className="mb-5 text-xl font-bold text-gray-800 dark:text-white flex items-center">
-      <span className="inline-block w-8 h-1 mr-3 bg-blue-500 rounded-full dark:bg-blue-400"></span>
+    <h3 className="mb-4 text-xl font-bold text-gray-800 dark:text-white">
       {title}
     </h3>
-    <div className="space-y-2">
+    <div className="grid grid-cols-1 gap-2">
       {skills.map((skill, skillIndex) => (
         <Skill key={skillIndex} {...skill} />
       ))}
@@ -102,44 +86,31 @@ const SkillCategory: React.FC<SkillCategoryProps> = ({
 const Skills: React.FC = () => {
   const skillCategories: SkillCategoryProps[] = [
     {
-      title: "Design",
+      title: "Web Développement",
       skills: [
-        { name: "Tailwind CSS", icon: "/tailwindcss-icon.svg" },
-        { name: "Figma", icon: "/figma-icon.svg", isColor: true },
+        { name: "Next.js", isHighlighted: true },
+        { name: "Node" },
+        { name: "Django" },
+        { name: "Laravel" },
       ],
       index: 0,
     },
     {
-      title: "Front-End",
+      title: "Web Scraping",
       skills: [
-        { name: "JavaScript", icon: "/js-icon.svg" },
-        {
-          name: "TypeScript",
-          icon: "/typescript-icon.svg",
-          isHighlighted: true,
-        },
-        { name: "React & Next.js", icon: "/react-icon.svg", isColor: true },
+        { name: "Selenium", isHighlighted: true },
+        { name: "BeautifulSoup" },
+        { name: "PlayWright" },
       ],
       index: 1,
     },
     {
-      title: "Back-End",
+      title: "Automation",
       skills: [
-        { name: "Python", icon: "/python-icon.svg", isHighlighted: true },
-        { name: "Node.js", icon: "/nodejs-icon.svg" },
-        { name: "Django", icon: "/django-icon.svg" },
-        { name: "PostgreSQL", icon: "/postgresql-icon.svg", isColor: true },
+        { name: "Make", isHighlighted: true },
+        { name: "n8n" },
       ],
       index: 2,
-    },
-    {
-      title: "Outils & Déploiement",
-      skills: [
-        { name: "Git & GitHub", icon: "/github-icon.svg" },
-        { name: "Vercel", icon: "/vercel-icon.svg", isColor: true },
-        { name: "Prisma", icon: "/prisma-icon.svg", isColor: true },
-      ],
-      index: 3,
     },
   ]
 
@@ -153,20 +124,15 @@ const Skills: React.FC = () => {
     },
   }
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  }
-
   return (
-    <section id="skills" className="py-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950">
+    <section id="skills" className="py-20 bg-gradient-to-b from-gray-50/50 to-white dark:from-gray-900 dark:to-gray-950">
       <div className="container px-4 mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
+          initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
-          className="text-center"
+          className="text-center mb-12"
         >
           <TitleSection title="Compétences" />
           <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -174,23 +140,24 @@ const Skills: React.FC = () => {
           </p>
         </motion.div>
         
-        <motion.div
-          className="grid gap-6 mt-12 md:gap-8 md:grid-cols-2 lg:grid-cols-4"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {skillCategories.map((category, index) => (
-            <motion.div 
-              key={index} 
-              variants={itemVariants}
-              className="backdrop-blur-sm bg-white/50 dark:bg-gray-800/50 p-6 rounded-2xl border border-gray-100 dark:border-gray-700"
-            >
-              <SkillCategory {...category} />
-            </motion.div>
-          ))}
-        </motion.div>
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            className="grid gap-8 md:grid-cols-3"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {skillCategories.map((category, index) => (
+              <motion.div 
+                key={index}
+                className="backdrop-blur-sm bg-white/70 dark:bg-gray-800/50 p-6 rounded-2xl border border-gray-100/60 dark:border-gray-700/60 shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                <SkillCategory {...category} />
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   )

@@ -14,15 +14,15 @@ const Hero = () => {
   }, [])
   
   const services = [
-    "DÉVELOPPEMENT WEB",
-    "DATA ENGINEERING",
-    "INTELLIGENCE ARTIFICIELLE",
-    "UI/UX DESIGN",
-    "CONSULTANCE TECH",
-    "SOLUTIONS CLOUD",
+    "Développement Web",
+    "Automatisation",
+    "Web Scraping",
+    "Solutions IA",
+    "Développement d'API",
+    "Intégration de systèmes",
   ]
   
-  const expertises = ["Agence Digitale", "Solutions Innovantes", "Équipe d'Experts"]
+  const expertises = ["Automatisation", "Web Scraping(ETL)", "Web Development","AI Solutions"]
   
   useEffect(() => {
     const inspirationInterval = setInterval(() => {
@@ -208,7 +208,7 @@ const Hero = () => {
                   <div className="mb-3 p-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl w-fit">
                     <Star className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                   </div>
-                  <span className="text-4xl font-bold text-slate-800 dark:text-white">100+</span>
+                  <span className="text-4xl font-bold text-slate-800 dark:text-white">10+</span>
                   <p className="text-slate-600 dark:text-slate-300 mt-1">Projets livrés</p>
                 </div>
                 
@@ -224,15 +224,15 @@ const Hero = () => {
                   <div className="mb-3 p-3 bg-teal-100 dark:bg-teal-900/30 rounded-xl w-fit">
                     <Code className="w-6 h-6 text-teal-600 dark:text-teal-400" />
                   </div>
-                  <span className="text-4xl font-bold text-slate-800 dark:text-white">12</span>
-                  <p className="text-slate-600 dark:text-slate-300 mt-1">Experts tech</p>
+                  <span className="text-4xl font-bold text-slate-800 dark:text-white">+3ans</span>
+                  <p className="text-slate-600 dark:text-slate-300 mt-1">Expertises</p>
                 </div>
                 
                 <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-lg p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xl">
                   <div className="mb-3 p-3 bg-orange-100 dark:bg-orange-900/30 rounded-xl w-fit">
                     <Globe className="w-6 h-6 text-orange-600 dark:text-orange-400" />
                   </div>
-                  <span className="text-4xl font-bold text-slate-800 dark:text-white">24</span>
+                  <span className="text-4xl font-bold text-slate-800 dark:text-white">3</span>
                   <p className="text-slate-600 dark:text-slate-300 mt-1">Pays clients</p>
                 </div>
               </motion.div>

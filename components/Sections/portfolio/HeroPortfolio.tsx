@@ -16,7 +16,7 @@ const HeroPortfolio = () => {
   }, [])
   
 
-  const titles = ["Développeur Web", "Data Engineering", "Freelance Créatif"]
+  const titles = ["Développeur Web", "Data Engineering", "Web Scraper", "Ai Automation"]
   
   useEffect(() => {
    
@@ -103,10 +103,10 @@ const HeroPortfolio = () => {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <span className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 dark:bg-slate-800 border border-blue-200 dark:border-slate-700 text-blue-600 dark:text-blue-400 font-medium text-lg">
+            {/* <span className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 dark:bg-slate-800 border border-blue-200 dark:border-slate-700 text-blue-600 dark:text-blue-400 font-medium text-lg">
               <span className="w-3 h-3 rounded-full bg-green-500 mr-2 animate-pulse"></span>
               Disponible pour missions freelance
-            </span>
+            </span> */}
           </motion.div>
           
           {/* Section du profil avec image et nom côte à côte */}
@@ -170,6 +170,7 @@ const HeroPortfolio = () => {
             className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mb-12"
           >
             Je conçois et développe des <span className="font-medium text-blue-600 dark:text-blue-400">expériences web créatives</span> qui allient esthétique moderne et performance technique.
+            J&apos;utilise des outils comme make et n8n pour automatiser les tâches répétitives et améliorer l&apos;efficacité des flux de travail.
           </motion.p>
           
           {/* Stats personnelles */}
@@ -180,11 +181,11 @@ const HeroPortfolio = () => {
             className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl w-full mx-auto mb-12"
           >
             <div className="flex flex-col items-center p-6 bg-white/70 dark:bg-slate-800/70 rounded-xl backdrop-blur-sm border border-slate-200 dark:border-slate-700">
-              <span className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">5+</span>
+              <span className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">3+</span>
               <span className="text-slate-600 dark:text-slate-300">Années d&apos;expérience</span>
             </div>
             <div className="flex flex-col items-center p-6 bg-white/70 dark:bg-slate-800/70 rounded-xl backdrop-blur-sm border border-slate-200 dark:border-slate-700">
-              <span className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">50+</span>
+              <span className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">5+</span>
               <span className="text-slate-600 dark:text-slate-300">Projets réalisés</span>
             </div>
             <div className="flex flex-col items-center p-6 bg-white/70 dark:bg-slate-800/70 rounded-xl backdrop-blur-sm border border-slate-200 dark:border-slate-700">
@@ -280,59 +281,3 @@ const HeroPortfolio = () => {
 }
 
 export default HeroPortfolio
-
-// Ajoutez ces animations dans votre fichier global.css
-/*
-@keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-}
-
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
-@keyframes matrix {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(100vh);
-  }
-}
-
-.animate-blob {
-  animation: blob 7s infinite;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
-
-.animate-blink {
-  animation: blink 1s step-end infinite;
-}
-
-.animate-matrix {
-  animation: matrix linear infinite;
-}
-*/

@@ -57,7 +57,7 @@ export function SiteHeader() {
             rel="noreferrer"
           >
             <div className="text-white hover:text-blue-200 transition-colors">
-              <Linkedin className="w-4 h-4" />
+              <Linkedin className="w-8 h-8" />
             </div>
           </Link>
           <Link
@@ -66,7 +66,7 @@ export function SiteHeader() {
             rel="noreferrer"
           >
             <div className="text-white hover:text-blue-200 transition-colors">
-              <Icons.twitter className="w-4 h-4" />
+              <Icons.twitter className="w-8 h-8" />
             </div>
           </Link>
           <Link
@@ -75,7 +75,7 @@ export function SiteHeader() {
             rel="noreferrer"
           >
             <div className="text-white hover:text-blue-200 transition-colors">
-              <Icons.gitHub className="w-4 h-4" />
+              <Icons.gitHub className="w-8 h-8" />
             </div>
           </Link>
         </div>

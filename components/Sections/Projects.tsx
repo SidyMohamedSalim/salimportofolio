@@ -217,16 +217,16 @@ const Projects: React.FC = () => {
       category: "IA"
     }
     ,
-    {
-      title: "Travel Site",
-      description: "Plateforme de réservation de voyages avec comparaison de prix et suggestions personnalisées basées sur les préférences utilisateurs.",
-      imageSrc: "/projets/travel.png",
-      githubLink: "https://github.com/SidyMohamedSalim/easyTourisme",
-      liveLink: "https://travelsalim.netlify.app",
-      technologies: ["Nextjs", "Talwind Css", "Prisma"],
-      date: "Nov 2023",
-      category: "Web"
-    },
+    // {
+    //   title: "Travel Site",
+    //   description: "Plateforme de réservation de voyages avec comparaison de prix et suggestions personnalisées basées sur les préférences utilisateurs.",
+    //   imageSrc: "/projets/travel.png",
+    //   githubLink: "https://github.com/SidyMohamedSalim/easyTourisme",
+    //   liveLink: "https://travelsalim.netlify.app",
+    //   technologies: ["Nextjs", "Talwind Css", "Prisma"],
+    //   date: "Nov 2023",
+    //   category: "Web"
+    // },
   ];
 
   const categories = ["all", "Web", "IA", "Data"];

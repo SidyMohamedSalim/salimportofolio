@@ -147,13 +147,39 @@ const Projects: React.FC = () => {
   
   const projects: ProjectCardProps[] = [
     {
+      title: "ProGestion",
+      description: "Application de gestion d'agence avec fonctionnalités de gestion des clients, employés et projets.",
+      imageSrc: "/projets/crmAgence.png",
+      technologies: ["React", "Next.js", "Tailwind CSS","Prisma"],
+      category: "Web",
+      date: "Jan 2025",
+    },
+    
+    {
       title: "Senegal Premium Tour",
       description: "Site web professionnel pour une agence de voyage au Sénégal, avec réservation en ligne et présentation des circuits touristiques.",
       imageSrc: "/projets/tourism.png",
       liveLink: "https://www.senegalpremiumtour.com/",
-      technologies: ["React", "Next.js", "Tailwind CSS", "Strapi"],
+      technologies: ["React", "Next.js", "Tailwind CSS"],
       date: "Mar 2023",
       category: "Web"
+    },
+    {
+      title: "Portfolio",
+      description: "Mon portfolio personnel, mettant en avant mes compétences et projets récents.",
+      imageSrc: "/projets/portfolio.png",
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+      date: "Jan 2023",
+      liveLink: "https://www.salimdiallo.com/portfolio",
+      category: "Web"
+    },
+    {
+      technologies: ["Python", "BeautifulSoup", "SQLite", "Pandas", "NumPy","Requests", "Selenium"],
+      imageSrc: "/projets/carforSale.png",
+      title: "CarForSale Scraper",
+      description: "Scraper pour extraire des données de voitures à vendre sur un site web, avec stockage dans une base de données.",
+      category: "Web",
+      date: "Mai 2024",
     },
     {
       title: "Reviser avec l'IA",
@@ -166,12 +192,38 @@ const Projects: React.FC = () => {
       category: "IA"
     },
     {
+      title: "N8N Automation",
+      description: "Ce workflow envoie automatiquement les e-mails étiquetés dans Gmail vers une base de données Notion en créant une page avec le sujet, un extrait du contenu et le lien de l’e-mail.",
+      imageSrc: "/projets/n8n.png",
+      technologies: ["N8N", "Gmail API", "Notion API"],
+      date: "Dec 2024",
+      category: "Ai"
+    },
+    {
+      title: "Crypto Tracker",
+      description: "Application de suivi des prix des cryptomonnaies en temps réel, avec graphiques et alertes personnalisées.",
+      imageSrc: "/projets/CryptoApp.png",
+      technologies: ["React", "Tailwind CSS", "CoinGecko API"],
+      date: "Fév 2021",
+      githubLink:"https://github.com/SidyMohamedSalim/cryptoapp",
+      category: "Web"
+    },
+    {
+      title: "Telegram Dm Sender",
+      description: "Bot Telegram pour envoyer des messages en masse à des utilisateurs spécifiques, avec gestion des erreurs et des délais.",
+      imageSrc: "/projets/telegram.png",
+      technologies: ["Python", "Telethon", "SQLite"],
+      date: "2024",
+      category: "IA"
+    }
+    ,
+    {
       title: "Travel Site",
       description: "Plateforme de réservation de voyages avec comparaison de prix et suggestions personnalisées basées sur les préférences utilisateurs.",
       imageSrc: "/projets/travel.png",
       githubLink: "https://github.com/SidyMohamedSalim/easyTourisme",
       liveLink: "https://travelsalim.netlify.app",
-      technologies: ["Vue.js", "Express", "MongoDB", "Docker"],
+      technologies: ["Nextjs", "Talwind Css", "Prisma"],
       date: "Nov 2023",
       category: "Web"
     },

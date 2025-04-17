@@ -223,14 +223,14 @@ export function SiteHeader() {
               <div className="pt-2 border-t border-gray-200 dark:border-gray-800 space-y-2">
                 <div className="flex items-center space-x-3 px-4 py-2">
                   <Phone className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <a href="tel:+33123456789" className="text-gray-700 dark:text-gray-300">
-                    +33 1 23 45 67 89
+                  <a href="tel:+212684499227" className="text-gray-700 dark:text-gray-300">
+                    +212 684499227
                   </a>
                 </div>
                 <div className="flex items-center space-x-3 px-4 py-2">
                   <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <a href="mailto:contact@digisolutions.fr" className="text-gray-700 dark:text-gray-300">
-                    contact@digisolutions.fr
+                  <a href="mailto:   sidymamadousalim@gmail.com" className="text-gray-700 dark:text-gray-300">
+                   sidymamadousalim@gmail.com
                   </a>
                 </div>
               </div>
